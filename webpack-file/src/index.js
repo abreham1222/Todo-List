@@ -1,6 +1,7 @@
 import './style.css';
+import Todo from './component';
 
-const list = [
+/*const list = [
   {
     description: 'Submit code',
     index: 0,
@@ -40,3 +41,14 @@ const generate = (descValue) => {
 list.forEach((p) => {
   generate(p.description, p.complete, p.index);
 });
+*/
+
+const newtodo = new Todo();
+newtodo.value = '';
+const label = document.querySelectorAll('.task');
+label.forEach((input, index) =>
+  input.addEventListener('click', () => {
+    const removeBtn = document.querySelectorAll('.remove-btn');
+    removeBtn[index].style.display = 'inline';
+  })
+);
